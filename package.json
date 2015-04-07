@@ -1,0 +1,25 @@
+{
+  "name": "learnyounode_pack",
+  "version": "0.0.1",
+  "description": "一脚掉进node坑",
+  "main": "program.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hanaarena/learnyounode_code.git"
+  },
+  "keywords": [
+    "learnyounode"
+  ],
+  "author": "lanz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanaarena/learnyounode_code/issues"
+  },
+  "homepage": "https://github.com/hanaarena/learnyounode_code",
+  "dependencies": {
+    "concat-stream": "^1.4.8"
+  }
+}

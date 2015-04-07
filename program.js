@@ -4,10 +4,12 @@
 // }
 // console.log(sum);
 
+// Ex 2
 // var fs = require('fs');
 // var buffer = fs.readFileSync(process.argv[2]);
 // console.log(buffer.toString().split('\n').length - 1);
 
+// Ex 3
 // var fs = require('fs');
 // fs.readFile(process.argv[2], function(err, data) {
 // 	if (err) {
@@ -19,6 +21,7 @@
 // 	}
 // });
 
+// Ex 4
 // var fs = require('fs')
 //   , path = require('path');
 // fs.readdir('./', function(err, files) {
@@ -36,6 +39,7 @@
 // 	}
 // });
 
+// Ex 5
 // var fs = require('fs'),
 //   , path = require('path');
 
@@ -57,10 +61,70 @@
 
 // module.exports = firstModule;
 
-var firstModule = require('./firstModule');
+// Ex 6
+// var firstModule = require('./firstModule')
+//   , dir = process.argv[2]
+//   , filterStr = process.argv[3];
 
-firstModule('./', 'md', function(err, files) {
-	for (var i in files) {
-		console.log(files[i]);
-	};
-});
+// firstModule(dir, filterStr, function(err, files) {
+// 	if (err) { return console.log(err);};
+
+// 	for (var i in files) {
+// 		console.log(files[i]);
+// 	};
+// });
+
+// Ex 7
+// var http = require('http')
+//   , url = process.argv[2];
+
+// http.get(url, function(response) {
+// 	response.setEncoding('utf-8');
+// 	response.on('data', function(data) {
+// 		console.log(data);
+// 	});
+// });
+
+// Ex 8
+// var concat = require('concat-stream')
+//   , http = require('http')
+//   , url = process.argv[2];
+
+// http.get(url, function(response) {
+// 	response.pipe(
+// 		concat(function(data) {
+// 			console.log(data.toString().length);
+// 			console.log(data.toString());
+// 		})
+// 	);
+// });
+
+// Ex 9
+// var http = require('http')
+//   , concat = require('concat-stream')
+//   , urls = process.argv.slice(2)
+//   , result = []
+//   , count = 0;
+
+// function printGet() {
+// 	for(var i = 0; i < 3; i++)   {
+// 		console.log(result[i]);
+// 	};
+// }
+
+// function asyncGet(index) {
+// 	http.get(urls[index], function(response) {
+// 		response.pipe(concat(function(data) {
+// 				//result.push(data.toString());
+// 				result[index] = data.toString();
+// 				count++;
+
+// 				if(count == 3) printGet();
+// 			})
+// 		)
+// 	});
+// }
+
+// for(var i = 0; i < 3; i++) {
+// 	asyncGet(i);
+// };
