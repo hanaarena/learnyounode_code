@@ -128,3 +128,13 @@
 // for(var i = 0; i < 3; i++) {
 // 	asyncGet(i);
 // };
+//
+//Ex 10
+var net = require('net');
+var date = new Date();
+var datetime = date.getFullYear() + '-0' + (date.getMonth()+1) + '-' + date.getDate() + ' ' + date.getHours() + ':0' + date.getMinutes(); 
+var server = net.createServer(function(socket) {
+	socket.end(datetime);
+});
+
+server.listen(process.argv[2]);
