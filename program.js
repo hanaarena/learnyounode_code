@@ -131,10 +131,19 @@
 //
 //Ex 10
 var net = require('net');
-var date = new Date();
-var datetime = date.getFullYear() + '-0' + (date.getMonth()+1) + '-' + date.getDate() + ' ' + date.getHours() + ':0' + date.getMinutes(); 
+
+function timeFix(num) {
+	return (num < 10 ? '0' + num : num);
+}
+
+function getDatetime() {
+	var i = new Date();
+
+	return i.getFullYear() + '-' + timeFix(i.getMonth() + 1) + '-' + timeFix(i.getDate()) + ' ' + timeFix(i.getHours()) + ':' + timeFix(i.getMinutes());
+}
+
 var server = net.createServer(function(socket) {
-	socket.end(datetime);
+	socket.end(getDatetime());
 });
 
 server.listen(process.argv[2]);
