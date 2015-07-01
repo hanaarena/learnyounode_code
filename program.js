@@ -128,22 +128,32 @@
 // for(var i = 0; i < 3; i++) {
 // 	asyncGet(i);
 // };
-//
+
 //Ex 10
-var net = require('net');
+// var net = require('net');
 
-function timeFix(num) {
-	return (num < 10 ? '0' + num : num);
-}
+// function timeFix(num) {
+// 	return (num < 10 ? '0' + num : num);
+// }
 
-function getDatetime() {
-	var i = new Date();
+// function getDatetime() {
+// 	var i = new Date();
 
-	return i.getFullYear() + '-' + timeFix(i.getMonth() + 1) + '-' + timeFix(i.getDate()) + ' ' + timeFix(i.getHours()) + ':' + timeFix(i.getMinutes());
-}
+// 	return i.getFullYear() + '-' + timeFix(i.getMonth() + 1) + '-' + timeFix(i.getDate()) + ' ' + timeFix(i.getHours()) + ':' + timeFix(i.getMinutes());
+// }
 
-var server = net.createServer(function(socket) {
-	socket.end(getDatetime());
-});
+// var server = net.createServer(function(socket) {
+// 	socket.end(getDatetime());
+// });
 
-server.listen(process.argv[2]);
+// server.listen(process.argv[2]);
+
+// Ex 11
+// var http = require('http')
+//     , fs = require('fs');
+//
+// var server = http.createServer(function(req, res) {
+//	 fs.createReadStream(process.argv[3]).pipe(res);
+// });
+//
+// server.listen(process.argv[2]);
